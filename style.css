@@ -1,1 +1,10 @@
-
+body {
+    margin: auto;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Circular,spotify-circular, Helvetica, Arial, sans-serif;
+}

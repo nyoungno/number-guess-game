@@ -74,8 +74,12 @@ function reset() {
   userInput.value = "";
   // 새로운 번호가 생성되고
   pickRandomNum();
-
   resultArea.textContent = "결과값이 여기 나옵니다!";
+  gameOver = false;
+  playButton.disabled = false;
+  chances = 5;
+  chanceArea.innerHTML = `남은 기회:${chances}번`;
+  userValueList = [];
 }
 pickRandomNum();
 
