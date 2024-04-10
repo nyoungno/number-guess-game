@@ -6,7 +6,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: Circular,spotify-circular, Helvetica, Arial, sans-serif;
+    font-family: "East Sea Dokdo", cursive;
+    background-image: url(./image/배경화면.png);
 }
 
 .container {
@@ -14,4 +15,55 @@ body {
     border-radius: 20px;
     text-align: center;
     background-color: rgba(247, 243, 242, 0.7);
+}
+
+
+.pre-title {
+    font-size: 5vw;
+    font-weight: bold;
+    color:blue
+}
+
+.title {
+    font-size: 7vw;
+    font-weight: bold;
+}
+
+.sub-title {
+    font-size: 6vw;
+    font-weight: bold;
+    font-size: 6vw;
+}
+
+.red-text {
+    font-weight: bold;
+    color: red;
+}
+
+.result-text {
+
+}
+
+
+.justify-content-center {
+    -webkit-box-pack: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+}
+
+.button-style {
+    height: 80px;
+    width: 100px;
+    margin-top: 5px;
+    border-radius: 50px;
+    font-size: 30pt;
+    font-weight: bold;
+}
+
+.form-control {
+    height: 80px;
+  
+    font-size: 3vw;
+    margin-right: 20px;
+    text-align: center;
 }

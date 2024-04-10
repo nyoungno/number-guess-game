@@ -54,7 +54,7 @@ function play() {
     } else if (userValue > computerNum) {
       resultArea.textContent = "DOWN!!"; 
     } else {
-      resultArea.textContent = "맞추셨습니다!!";
+      resultArea.textContent = "정답!!";
       gameOver = true
     }
 
@@ -74,11 +74,11 @@ function reset() {
   userInput.value = "";
   // 새로운 번호가 생성되고
   pickRandomNum();
-  resultArea.textContent = "결과값이 여기 나옵니다!";
+  resultArea.textContent = "죽기 싫다면 맞춰라";
   gameOver = false;
   playButton.disabled = false;
   chances = 5;
-  chanceArea.innerHTML = `남은 기회:${chances}번`;
+  chanceArea.innerHTML = `남은 기회:${chances}`;
   userValueList = [];
 }
 pickRandomNum();
