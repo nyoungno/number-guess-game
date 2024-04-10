@@ -8,6 +8,7 @@ body {
     align-items: center;
     font-family: "East Sea Dokdo", cursive;
     background-image: url(./image/배경화면.png);
+    background-position : center;
 }
 
 .container {
@@ -67,3 +68,45 @@ body {
     margin-right: 20px;
     text-align: center;
 }
+
+@media screen and (max-width: 48rem) {
+    .pre-title {
+      font-size: 10vw;
+    }
+  
+    .title {
+      font-size: 12vw;
+    }
+  
+    .sub-title {
+      font-size: 11vw;
+    }
+  
+    .form-control {
+      font-size: 8vw;
+      max-width: 500px;
+      margin-right: 0px;
+    }
+  
+    .main-img {
+      width: 40vw;
+    }
+  
+    .button-reset {
+      font-size: 5vw;
+      width: 80px;
+      height: 60px;
+    }
+    body {
+        margin: auto;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: "East Sea Dokdo", cursive;
+        background-image: url(./image/당신의\ 눈동자에\ 건배.png);
+        background-position : center;
+    }
+  }

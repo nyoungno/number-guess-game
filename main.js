@@ -82,4 +82,3 @@ function reset() {
   userValueList = [];
 }
 pickRandomNum();
-
