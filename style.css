@@ -8,3 +8,10 @@ body {
     align-items: center;
     font-family: Circular,spotify-circular, Helvetica, Arial, sans-serif;
 }
+
+.container {
+    border: 10px solid white;
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgba(247, 243, 242, 0.7);
+}
