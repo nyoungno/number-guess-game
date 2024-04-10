@@ -6,7 +6,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: "East Sea Dokdo", cursive;
+    font-family: "Gaegu", sans-serif;
     background-image: url(./image/배경화면.png);
     background-position : center;
 }
@@ -57,33 +57,33 @@ body {
     width: 100px;
     margin-top: 5px;
     border-radius: 50px;
-    font-size: 30pt;
+    font-size: 26pt;
     font-weight: bold;
 }
 
 .form-control {
     height: 80px;
   
-    font-size: 3vw;
+    font-size: 2vw;
     margin-right: 20px;
     text-align: center;
 }
 
 @media screen and (max-width: 48rem) {
     .pre-title {
-      font-size: 10vw;
+      font-size: 8vw;
     }
   
     .title {
-      font-size: 12vw;
+      font-size: 10vw;
     }
   
     .sub-title {
-      font-size: 11vw;
+      font-size: 9vw;
     }
   
     .form-control {
-      font-size: 8vw;
+      font-size: 6vw;
       max-width: 500px;
       margin-right: 0px;
     }
@@ -105,7 +105,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-family: "East Sea Dokdo", cursive;
+        font-family: "Gaegu", sans-serif;
         background-image: url(./image/당신의\ 눈동자에\ 건배.png);
         background-position : center;
     }
