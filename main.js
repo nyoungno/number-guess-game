@@ -9,78 +9,87 @@
 //유저가 이미 입력한 숫자를 또입 입력하면, 알려준다. 기회를 깍지 않는다.
 
 
-let computerNum = 0;
+let computerNumber = 0;
 let playButton = document.getElementById("play-button");
-let userInput = document.getElementById("user-input");
-let resultArea = document.getElementById("result-area");
-let resetButton = document.getElementById("reset-button");
-let chances = 5;
-let gameOver = false;
+let resetButton = document.querySelector(".button-reset");
+let userInput = document.querySelector("#user-input");
+let resultAreaImg = document.querySelector(".main-img");
+let resultText = document.querySelector(".result-text");
 let chanceArea = document.getElementById("chance-area");
-let history = [];
+let gameOver = false;
+let chances = 5; // 남은 기회
+let userValueList = []; // 유저가 입력한 숫자들 리스트
 
+chanceArea.innerHTML = `남은 기회:${chances}`;
 playButton.addEventListener("click", play);
 resetButton.addEventListener("click", reset);
-userInput.addEventListener("focus", function () {
-  userInput.value=""
-});
+userInput.addEventListener("focus", focusInput);
 
-function pickRandomNum() {
-    computerNum = Math.floor(Math.random() * 100) + 1;
-    console.log("정답", computerNum);
+function pickRandomNumber() {
+  // 랜덤숫자 뽑기
+
+  computerNumber = Math.floor(Math.random() * 100) + 1;
+  console.log("정답", computerNumber);
 }
 
-
 function play() {
-    let userValue = userInput.value;
+  // 숫자 추측하기
+  const userValue = userInput.value;
+  if (userValue < 1 || userValue > 100) {
+    resultAreaImg.src = "./image/중복2.PNG";
+    resultText.textContent = "1부터 100 사이의 숫자를 입력 해주세요";
 
-    if(userValue<1 || userValue>100) {
-      resultArea.textContent = "1과 100사이 숫자를 입력해 주세요";
-      return;
-    }
+    return;
+  }
 
-    if(history.includes(userValue)){
-      resultArea.textContent = "이미 입력한 숫자입니다 다른 숫자를 입력해 주세요";
-      return;
-    }
+  if (userValueList.includes(userValue)) {
+    resultAreaImg.src = "./image/중복.PNG";
+    resultText.textContent = "이미 입력한 숫자입니다. 다른 숫자를 입력해주세요";
 
-    chances --;
-    chanceArea.textContent = `남은기회:${chances}번`;
-    console.log("chance",chances);
+    return;
+  }
 
+  chances--;
+  chanceArea.innerHTML = `남은 기회:${chances}`;
+  userValueList.push(userValue);
+  if (userValue < computerNumber) {
+    resultAreaImg.src = "./image/UP.PNG";
+    resultText.textContent = "Up!";
+  } else if (userValue > computerNumber) {
+    resultAreaImg.src = "./image/DOWN.PNG";
+    resultText.textContent = "Down!";
+  } else {
+    resultAreaImg.src = "./image/정답.PNG";
+    resultText.textContent = "정답!";
+    gameOver = true;
+  }
 
-    if (userValue < computerNum) {
-      resultArea.textContent = "UP!!";
-    } else if (userValue > computerNum) {
-      resultArea.textContent = "DOWN!!"; 
-    } else {
-      resultArea.textContent = "정답!!";
-      gameOver = true
-    }
+  if (chances == 0) {
+    gameOver = true;
+    resultAreaImg.src = "./image/실패.PNG";
+    resultText.textContent = "실패!";
+  }
 
-    history.push(userValue);
-    console.log(history);
+  if (gameOver == true) {
+    playButton.disabled = true;
+  }
+}
 
-    if(chances < 1) {
-      gameOver = true;
-    }
-    if(gameOver == true) {
-      playButton.disabled = true
-    }
+function focusInput() {
+  userInput.value = "";
 }
 
 function reset() {
-  // user input창이 깨끗하게 정리하고
+  //리셋
+  pickRandomNumber();
   userInput.value = "";
-  // 새로운 번호가 생성되고
-  pickRandomNum();
-  resultAreaImg.src =
-  "https://media1.giphy.com/media/9DinPR8bzFsmf74j9W/giphy.gif";
-  resultArea.textContent = "죽기 싫다면 맞춰라";
+  resultAreaImg.src = "./image/건배.PNG";
+  resultText.textContent = "죽기 싫다면 맞춰라";
   gameOver = false;
   playButton.disabled = false;
   chances = 5;
   chanceArea.innerHTML = `남은 기회:${chances}`;
   userValueList = [];
 }
-pickRandomNum();
+
+pickRandomNumber();
