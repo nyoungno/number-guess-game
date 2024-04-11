@@ -14,7 +14,7 @@ let playButton = document.getElementById("play-button");
 let userInput = document.getElementById("user-input");
 let resultArea = document.getElementById("result-area");
 let resetButton = document.getElementById("reset-button");
-let chances = 5;
+let chances = 7;
 let gameOver = false;
 let chanceArea = document.getElementById("chance-area");
 let history = [];
@@ -77,7 +77,7 @@ function reset() {
   resultArea.textContent = "죽기 싫다면 맞춰라";
   gameOver = false;
   playButton.disabled = false;
-  chances = 5;
+  chances = 7;
   chanceArea.innerHTML = `남은 기회:${chances}`;
   userValueList = [];
 }
