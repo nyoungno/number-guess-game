@@ -14,7 +14,7 @@ let playButton = document.getElementById("play-button");
 let userInput = document.getElementById("user-input");
 let resultArea = document.getElementById("result-area");
 let resetButton = document.getElementById("reset-button");
-let chances = 7;
+let chances = 5;
 let gameOver = false;
 let chanceArea = document.getElementById("chance-area");
 let history = [];
@@ -74,10 +74,12 @@ function reset() {
   userInput.value = "";
   // 새로운 번호가 생성되고
   pickRandomNum();
+  resultAreaImg.src =
+  "https://media1.giphy.com/media/9DinPR8bzFsmf74j9W/giphy.gif";
   resultArea.textContent = "죽기 싫다면 맞춰라";
   gameOver = false;
   playButton.disabled = false;
-  chances = 7;
+  chances = 5;
   chanceArea.innerHTML = `남은 기회:${chances}`;
   userValueList = [];
 }
